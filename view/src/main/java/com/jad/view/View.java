@@ -13,7 +13,7 @@ public class View implements IView {
     public View(final IModel model) {
         this.model = model;
         TextWindowSettings textWindowSettings = new TextWindowSettings();
-        textWindowSettings.setScreenWidth(80);
+        textWindowSettings.setScreenWidth(160);
         textWindowSettings.setScreenHeight(40);
         textWindowSettings.setTitle("Tron by JAD");
         textWindowSettings.setFontSize(16f);
@@ -37,6 +37,7 @@ public class View implements IView {
         StringBuilder screenStr = new StringBuilder();
         for (int row = 0; row < screen.dimension().height; row++) {
             for (int column = 0; column < screen.dimension().width; column++) {
+                screenStr.append(screen.sprites()[row][column].ascii());
                 screenStr.append(screen.sprites()[row][column].ascii());
             }
             screenStr.append("\n");

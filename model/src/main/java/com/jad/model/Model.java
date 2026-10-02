@@ -9,9 +9,13 @@ public class Model implements IModel {
     static final Dimension GRID_DIMENSION = new Dimension(80, 40);
 
     private final Grid grid;
+    private final LightCycle lightCycle;
 
     public Model() {
         this.grid = new Grid(Model.GRID_DIMENSION);
+        this.lightCycle = new LightCycle(new Point(GRID_DIMENSION.width / 2, GRID_DIMENSION.height / 2),
+                                         Direction.EAST,
+                                         this.grid);
     }
 
     @Override
@@ -23,5 +27,20 @@ public class Model implements IModel {
             }
         }
         return new Screen(Model.GRID_DIMENSION, sprites);
+    }
+
+    @Override
+    public void moveAll() {
+        this.lightCycle.moveForward();
+    }
+
+    @Override
+    public void turnLeft() {
+        this.lightCycle.turnLeft();
+    }
+
+    @Override
+    public void turnRight() {
+        this.lightCycle.turnRight();
     }
 }

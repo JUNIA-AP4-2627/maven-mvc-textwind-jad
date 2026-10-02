@@ -30,7 +30,8 @@ public final class Grid {
     }
 
     public Point wrapPosition(final Point position) {
-        return new Point(position.x % this.dimension.width, position.y % this.dimension.height);
+        return new Point((position.x + this.dimension.width) % this.dimension.width,
+                         (position.y + this.dimension.height) % this.dimension.height);
     }
 
     public void setTileAt(final Tile tile, final Point position) {

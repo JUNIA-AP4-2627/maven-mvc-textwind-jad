@@ -3,8 +3,8 @@ package com.jad.model;
 import com.jad.view.Sprite;
 
 public enum Tile {
-    WALL(true, new Sprite('#')),
-    EMPTY(true, new Sprite('.')),
+    WALL(true, new Sprite('█')),
+    EMPTY(true, new Sprite(' ')),
     ;
 
     private final boolean obstacle;
