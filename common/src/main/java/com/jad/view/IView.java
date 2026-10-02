@@ -8,4 +8,6 @@ public interface IView {
     void displayMessage(final String message);
 
     void displayScreen();
+
+    void handleInput();
 }
